@@ -5,6 +5,7 @@
 .vscode
 .eclipse
 
+scripts
 coverage
 unit-testing
 documentation
