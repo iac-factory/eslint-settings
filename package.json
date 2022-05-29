@@ -1,6 +1,6 @@
 {
     "name": "@iac-factory/eslint-settings",
-    "version": "1.2.5",
+    "version": "1.2.9",
     "description": "ESLint Styling and Unit-Testing",
     "module": "index.js",
     "main": ".eslintrc.js",
@@ -20,19 +20,30 @@
         "url": "https://github.com/iac-factory",
         "organization": true
     },
+    "files": [
+        ".eslintrc.js",
+        ".eslintrc.json",
+        ".eslintrc.ts",
+        "typescript.eslintrc.js",
+        "typescript.eslintrc.ts",
+        "yaml.eslintrc.yml"
+    ],
     "publishConfig": {
         "access": "public",
         "tag": "latest"
     },
+    "peerDependencies": {
+        "eslint": "^8.16.0"
+    },
     "devDependencies": {
         "@jest/globals": "^28.1.0",
-        "@types/jest": "^27.5.1",
+        "@jest/types": "^28.1.0",
         "@types/node": "^17.0.35",
         "@typescript-eslint/eslint-plugin": "^5.26.0",
         "@typescript-eslint/parser": "^5.26.0",
         "eslint": "^8.16.0",
         "jest": "^28.1.0",
         "typescript": "^4.7.2",
-        "eslint-plugin-jest": "^26.2.2"
+        "eslint-plugin-jest": "^26.4.2"
     }
 }

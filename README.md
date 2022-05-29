@@ -14,7 +14,8 @@ similar to JSLint and JSHint with a few exceptions:
 
 [Official Integration(s)](https://eslint.org/docs/user-guide/integrations)
 
-Additional integrations extend to version control, CI-CD tools, build utilities, and commandline application(s), including:
+Additional integrations extend to version control, CI-CD tools, build utilities, and commandline application(s),
+including:
 
 - [Git Precommit Hook](https://coderwall.com/p/zq8jlq/eslint-pre-commit-hook)
 - Gulp - `gulp-eslint`
@@ -39,8 +40,6 @@ Additional integrations extend to version control, CI-CD tools, build utilities,
     - GoLand: [ESLint](https://www.jetbrains.com/help/webstorm/eslint.html)
 - Visual Studio Code: [ESLint Extension]()
 
----
-
 ## Usage ##
 
 `npm install --save-dev @iac-factory/eslint-settings`
@@ -48,24 +47,26 @@ Additional integrations extend to version control, CI-CD tools, build utilities,
 Lastly, in either a `.eslintrc.[json, yml, ts, js]`, or file:
 
 ```json
-...
 {
-    "extends": "@iac-factory/eslint-settings"
+    "extends": [
+        "@iac-factory/eslint-settings"
+    ]
 }
 ```
 
 Additionally, the same extension can be specified in a project's `package.json` file:
 
 ```json
-...
-"eslintConfig": {
-    "extends": ".eslintrc.json"
+{
+    "eslintConfig": {
+        "extends": [
+            "@iac-factory/eslint-settings"
+        ]
+    }
 }
 ```
 
 Using either method, or using a combination, still allows for extension(s) and customization.
-
----
 
 ## Setup ##
 
@@ -76,24 +77,24 @@ unless the goal is to start another ESLint-related package from scratch.
     ```bash
     npm install eslint --save-dev
     ```
-2. Configure (the following prompts aren't verbatim answers -- such is to avoid changes in the future to the setup options)
+2. Configure (the following prompts aren't verbatim answers -- such is to avoid changes in the future to the setup
+   options)
     ```bash
     npm init @eslint/config
     ```
-
-   - `Check Syntax, Find Problems, Enforce`
-   - `JavaScript Modules (import/export)`
-   - `No Framework`
-   - `Yes, Project Uses Typescript`
-   - `Node`
-   - `Answer Questions about Code Style`
-       - `Configuration Format: JavaScript`
-       - `Spaces for Indentation`
-       - `Double Quotes`
-       - `Unix`
-       - `Require Semicolons`
-       - `Yes, install @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest eslint@latest`
-       - `Package Manager: npm`
+    - `Check Syntax, Find Problems, Enforce`
+    - `JavaScript Modules (import/export)`
+    - `No Framework`
+    - `Yes, Project Uses Typescript`
+    - `Node`
+    - `Answer Questions about Code Style`
+        - `Configuration Format: JavaScript`
+        - `Spaces for Indentation`
+        - `Double Quotes`
+        - `Unix`
+        - `Require Semicolons`
+        - `Yes, install @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest eslint@latest`
+        - `Package Manager: npm`
 
 Now a general, recommended baseline configuration should be available.
 
@@ -116,8 +117,8 @@ to, again, only first-time setup.
     npm install --save-peer ts-node@latest
     ```
 2. Update `package.json`
-   - Because `ts-node` is technically a development-only dependency, it's useful and in some contexts
-   a requirement to update the `peerDepedenciesMeta` section of the `package.json` file.
+    - Because `ts-node` is technically a development-only dependency, it's useful and in some contexts
+      a requirement to update the `peerDepedenciesMeta` section of the `package.json` file.
 
    <br/>
 
@@ -138,8 +139,6 @@ Note that the following section is not a full, exhaustive list of `@iac-factory/
 `peerDependenciesMeta` declaration; the [**Typescript Setup**](#typescript-setup) section is only for
 conceptual configuration. Changes occur over time, and its of best interest to avoid otherwise
 *code-breaking settings*. Additionally, to avoid introducing *drift*  from the perspective of documentation.
-
----
 
 ## Testing ##
 
@@ -216,7 +215,8 @@ as an admission, this doesn't answer the question:
 > *Why not just use ts-jest [...] ?*
 
 While implementation and ensuring of compliance is complex, the answer is simple:
-  - **Because `ts-jest` isn't kept updated alongside `jest`**.
+
+- **Because `ts-jest` isn't kept updated alongside `jest`**.
 
 The team behind `ts-jest` does their best to stay updated, certainly. It's still an external dependency. As such,
 drift and dependency hell can occur when developers are attempting to either mitigate security vulnerabilities
@@ -233,7 +233,8 @@ isn't any easier, either.
 But it's possible, and the case, with all relating packages.
 
 Research and efforts that went into determining an organization-wide compliant means for typescript transpilation
-was extensive, and has spanned over the course of ~ 5 months. However, and in confidence, these generalized configurations found in all related packages are
+was extensive, and has spanned over the course of ~ 5 months. However, and in confidence, these generalized
+configurations found in all related packages are
 the most non-opinionated, agnostic settings, determined (at least at this point in time).
 
 Front-end or backend, `node` or `ts-node`, Windows vs. Unix (mostly), IaC-Factory methods of packaging
