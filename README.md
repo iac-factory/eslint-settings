@@ -44,7 +44,19 @@ including:
 
 `npm install --save-dev @iac-factory/eslint-settings`
 
-Lastly, in either a `.eslintrc.[json, yml, ts, js]`, or file:
+Lastly, in either a `.eslintrc.[json, yml, ts, js]`, or file (for best compatability, use `.eslintrc.js`):
+
+```ts
+import Settings from "@iac-factory/eslint-settings";
+
+export default {
+    extends: [
+        Settings
+    ]
+};
+```
+
+Additionally,
 
 ```json
 {
@@ -54,7 +66,7 @@ Lastly, in either a `.eslintrc.[json, yml, ts, js]`, or file:
 }
 ```
 
-Additionally, the same extension can be specified in a project's `package.json` file:
+The same extension can be specified in a project's `package.json` file:
 
 ```json
 {
