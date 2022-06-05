@@ -16,15 +16,22 @@ similar to JSLint and JSHint with a few exceptions:
 npm install --save-dev @iac-factory/eslint-settings
 ```
 
-Then in the project's `package.json` file:
+Then in the project's `package.json` file's `eslintConfig` key:
 
 ```json
 {
-    "eslintConfig": {
-        "settings": {
-            "extends": "@iac-factory/eslint-settings"
-        }
-    }
+    "extends": "@iac-factory/eslint-settings"
+}
+```
+
+## ECMA ##
+
+If the project is configured to use ECMA modules, the `parserOptions` key will require:
+
+```json
+{
+    "ecmaVersion": "latest",
+    "sourceType": "module"
 }
 ```
 
