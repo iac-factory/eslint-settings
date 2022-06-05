@@ -23,21 +23,11 @@ including:
 
 #### IDEs ####
 
-- Sublime Text 3:
-    - [SublimeLinter-eslint](https://github.com/roadhump/SublimeLinter-eslint)
-    - [Build Next](https://github.com/albertosantini/sublimetext-buildnext)
+- Sublime Text 3 ([SublimeLinter-eslint](https://github.com/roadhump/SublimeLinter-eslint))
 - Eclipse Orion: ESLint is the [default linter](https://dev.eclipse.org/mhonarc/lists/orion-dev/msg02718.html)
 - Eclipse IDE: [Tern ESLint linter](https://github.com/angelozerr/tern.java/wiki/Tern-Linter-ESLint)
-- Atom:
-    - [`linter-eslint`](https://atom.io/packages/linter-eslint) - [Reference](https://atom.io/packages/linter-eslint)
-    - `fast-eslint-8`
+- Atom ([`linter-eslint`](https://atom.io/packages/linter-eslint) - [Reference](https://atom.io/packages/linter-eslint)):
 - JetBrains (all external references are the same) - [ESLint](https://www.jetbrains.com/help/webstorm/eslint.html):
-    - IDEA: [ESLint](https://www.jetbrains.com/help/webstorm/eslint.html)
-    - WebStorm: [ESLint](https://www.jetbrains.com/help/webstorm/eslint.html)
-    - PhpStorm: [ESLint](https://www.jetbrains.com/help/webstorm/eslint.html)
-    - PyCharm: [ESLint](https://www.jetbrains.com/help/webstorm/eslint.html)
-    - RubyMine: [ESLint](https://www.jetbrains.com/help/webstorm/eslint.html)
-    - GoLand: [ESLint](https://www.jetbrains.com/help/webstorm/eslint.html)
 - Visual Studio Code: [ESLint Extension]()
 
 ## Usage ##
@@ -58,14 +48,12 @@ export default {
 
 The same extension can be specified in a project's `package.json` file:
 
-- *Warning* - limited IDE abilities
-
 ```json
 {
     "eslintConfig": {
-        "extends": [
-            "@iac-factory/eslint-settings"
-        ]
+        "settings": {
+            "extends": "@iac-factory/eslint-settings"
+        }
     }
 }
 ```
@@ -92,13 +80,13 @@ unless the goal is to start another ESLint-related package from scratch.
     - `Yes, Project Uses Typescript`
     - `Node`
     - `Answer Questions about Code Style`
-        - `Configuration Format: JavaScript`
-        - `Spaces for Indentation`
-        - `Double Quotes`
-        - `Unix`
-        - `Require Semicolons`
-        - `Yes, install @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest eslint@latest`
-        - `Package Manager: npm`
+    - `Configuration Format: JavaScript`
+    - `Spaces for Indentation`
+    - `Double Quotes`
+    - `Unix`
+    - `Require Semicolons`
+    - `Yes, install @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest eslint@latest`
+    - `Package Manager: npm`
 
 Now a general, recommended baseline configuration should be available.
 
