@@ -3,7 +3,9 @@ import closure, { initialize } from ".";
 describe( "ECMA", () => {
     initialize() && void closure();
 
-    test( "Import", async () => {
+    it( "Import", async () => {
+        expect.assertions(1);
+
         const main = await import("..");
         const snapshot = JSON.stringify(main, null, 4);
         const result = "Successful";
@@ -17,7 +19,5 @@ describe( "ECMA", () => {
         expect.setState( state );
 
         expect(snapshot).toMatchSnapshot();
-
-        expect( main ).toBeTruthy();
     } );
 });

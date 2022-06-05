@@ -1,17 +1,14 @@
 {
     "name": "@iac-factory/eslint-settings",
-    "version": "1.5.15",
+    "version": "1.6.23",
     "description": "ESLint Styling and Unit-Testing",
-    "module": ".eslintrc.ts",
-    "main": ".eslintrc.js",
     "scripts": {
         "setup": "npx tsc --init",
         "lint": "npm run build && npx eslint .",
         "build": "tsc --build $(dirname $(npm root))/tsconfig.json",
         "lintfix": "npx eslint --fix .",
-        "update": "npm run test -- --update-snapshot",
         "pretest": "npm run build",
-        "update-snapshots": "npm run test && node --experimental-vm-modules $(command -v jest) --config jest.config.js --injectGlobals --detectOpenHandles --update-snapshot",
+        "update-snapshots": "npm run build && node --experimental-vm-modules $(command -v jest) --config jest.config.js --injectGlobals --detectOpenHandles --update-snapshot",
         "prepublishOnly": "npm run test",
         "test": "npm run build && node --experimental-vm-modules $(command -v jest) --config jest.config.js --injectGlobals --detectOpenHandles"
     },
@@ -21,13 +18,6 @@
         "url": "https://github.com/iac-factory",
         "organization": true
     },
-    "files": [
-        ".eslintrc.ts",
-        ".eslintrc.js",
-        ".eslintrc.json",
-        ".eslintrc.ts",
-        ".eslintrc.yml"
-    ],
     "publishConfig": {
         "access": "public",
         "tag": "latest"
@@ -48,5 +38,10 @@
         "@types/node": "^17.0.40",
         "jest": "^28.1.0",
         "typescript": "^4.7.3"
+    },
+    "eslintConfig": {
+        "extends": [
+            ".eslintrc.json"
+        ]
     }
 }

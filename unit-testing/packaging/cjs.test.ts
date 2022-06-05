@@ -3,7 +3,9 @@ import closure, { initialize } from ".";
 describe( "CJS", () => {
     initialize() && void closure();
 
-    test( "Import", async () => {
+    it( "Import", async () => {
+        expect.assertions(1);
+
         const main = require( ".." );
         const snapshot = JSON.stringify( main, null, 4 );
         const result = "Successful";
@@ -14,10 +16,8 @@ describe( "CJS", () => {
             }
         };
 
-        expect( main ).toBeTruthy();
-
-        expect( snapshot ).toMatchSnapshot();
-
         expect.setState( state );
+
+        expect(snapshot).toMatchSnapshot();
     } );
 } );

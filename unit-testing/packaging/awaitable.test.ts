@@ -1,9 +1,11 @@
 import closure, { initialize } from ".";
 
-describe( "Awaitable", () => {
+describe( "awaitable", () => {
     initialize() && void closure();
 
-    test( "Import", async () => {
+    it( "import", async () => {
+        expect.assertions(1);
+
         const main = import("..");
         const snapshot = JSON.stringify(main, null, 4);
         const result = "Successful";
@@ -16,7 +18,7 @@ describe( "Awaitable", () => {
 
         await expect( main ).resolves.toBeTruthy().then(() => {
             expect.setState( state );
-        }).finally(() => {
+
             expect(snapshot).toMatchSnapshot();
         });
     } );
