@@ -22,12 +22,6 @@ Due to `npm` Markdown rendering, please see the [example (`.eslintrc.json`)](htt
 
 The goal is to provide long-term support while limiting the manual requirements behind updating dependencies.
 
-`iac-factory/eslint-settings` includes very limited unit-tests to ensure of cross organizational compliance.
-However, it should be noted that such configuration is easily extended, and should be almost certainly
-applicable to other projects/organizations, too.
-
-### Usage ####
-
 ```bash
 npm run test
 ```
