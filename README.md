@@ -16,7 +16,7 @@ similar to JSLint and JSHint with a few exceptions:
 npm install --save-dev @iac-factory/eslint-settings
 ```
 
-Due to `npm` Markdown rendering, please see the [example (`.eslintrc.json`)](./example.eslintrc.json) configuration.
+Due to `npm` Markdown rendering, please see the [example (`.eslintrc.json`)](https://github.com/iac-factory/eslint-settings/example.eslintrc.json) configuration.
 
 ## Testing ##
 
