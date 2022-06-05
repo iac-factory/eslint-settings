@@ -1,6 +1,6 @@
 {
     "name": "@iac-factory/eslint-settings",
-    "version": "1.4.14",
+    "version": "1.5.15",
     "description": "ESLint Styling and Unit-Testing",
     "module": ".eslintrc.ts",
     "main": ".eslintrc.js",
@@ -33,10 +33,11 @@
         "tag": "latest"
     },
     "dependencies": {
-        "eslint": "^8.17.0",
-        "eslint-plugin-jest": "^26.5.1",
+        "@babel/eslint-parser": "^7.18.2",
         "@typescript-eslint/eslint-plugin": "^5.27.0",
-        "@typescript-eslint/parser": "^5.27.0"
+        "@typescript-eslint/parser": "^5.27.0",
+        "eslint": "^8.17.0",
+        "eslint-plugin-jest": "^26.5.1"
     },
     "peerDependencies": {
         "jest": "^28.1.0"
