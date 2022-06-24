@@ -1,6 +1,6 @@
 {
     "name": "@iac-factory/eslint-settings",
-    "version": "1.6.31",
+    "version": "1.6.32",
     "description": "ESLint Styling and Unit-Testing",
     "scripts": {
         "setup": "npx tsc --init",

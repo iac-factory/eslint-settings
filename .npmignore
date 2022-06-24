@@ -7,7 +7,15 @@
 
 scripts
 coverage
+examples
 unit-testing
 documentation
 
 tsconfig.tsbuildinfo
+
+*.ts
+*/**.ts
+
+!**/*.js
+!**/*.map
+!**/*.d.*
