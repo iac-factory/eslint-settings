@@ -1,12 +1,14 @@
 {
     "name": "@iac-factory/eslint-settings",
-    "version": "1.7.34",
+    "version": "1.7.36",
     "description": "ESLint Styling and Unit-Testing",
     "scripts": {
         "setup": "npx tsc --init",
         "lint": "npm run build && npx eslint .",
+        "lint-fix": "npx eslint --fix .",
+        "lint-debug": "npm run build && npx eslint --debug .",
+        "lint-test": "npm run build && npx eslint --fix-dry-run .",
         "build": "tsc --build tsconfig.json",
-        "lintfix": "npx eslint --fix .",
         "pretest": "npm run build",
         "update-snapshots": "npm run build && node --experimental-vm-modules $(command -v jest) --config jest.config.js --injectGlobals --detectOpenHandles --update-snapshot",
         "prepublishOnly": "npm run test",
